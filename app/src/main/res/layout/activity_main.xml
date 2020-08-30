@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:padding="15dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/moveToOtherActivityBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="다른 화면으로 이동하기" />
+
+    <EditText
+        android:id="@+id/messageEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="전달해 줄 메시지를 입력"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/sendMessageBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메시지를 다른 화면에 전달하기" />
+
+</LinearLayout>
