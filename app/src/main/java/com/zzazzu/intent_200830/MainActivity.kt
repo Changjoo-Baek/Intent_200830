@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             // 1000 대신 => 멤버 변수로 만들어둔 REQUEST_FOR_NICKNAME를 활용, 가독성 향
 
             startActivityForResult(myIntent, REQUEST_FOR_NICKNAME)
-
+ // 요건 왕복표
         }
 
     }
