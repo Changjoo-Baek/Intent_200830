@@ -2,6 +2,7 @@ package com.zzazzu.intent_200830
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -47,6 +48,21 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(myIntent, REQUEST_FOR_NICKNAME)
  // 요건 왕복
         }
+
+//          Dial 액션 예제
+
+        dialBtn.setOnClickListener{
+
+//          입력한 폰번 받아오기
+        val inputPhoneNum = phoneNumEdt.text.toString()
+
+        val myUri = Uri.parse("tel:${inputPhoneNum}")
+        val myIntent = Intent(Intent.ACTION_DIAL, myUri)
+        startActivity(myIntent)
+
+        }
+    }
+
 
 
 //  결과를 가지고 돌아올 때 실행되는 함수.
