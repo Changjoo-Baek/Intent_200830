@@ -1,5 +1,6 @@
 package com.zzazzu.intent_200830
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -44,8 +45,35 @@ class MainActivity : AppCompatActivity() {
             // 1000 대신 => 멤버 변수로 만들어둔 REQUEST_FOR_NICKNAME를 활용, 가독성 향
 
             startActivityForResult(myIntent, REQUEST_FOR_NICKNAME)
- // 요건 왕복표
+ // 요건 왕복
         }
+
+
+//  결과를 가지고 돌아올 때 실행되는 함수.
+//  닉네임 / 이메일 / 폰번 등 모든 입력 결과각 다 이 함수에서 실행됨.
+
+
+        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+            super.onActivityResult(requestCode, resultCode, data)
+
+//          닉네임을 가지러 갔다가 오는 길인가?
+
+            if (requestCode == REQUEST_FOR_NICKNAME) {
+
+//              ok를 누른게 맞나? (취소를 누르면 아무 일도 x)
+
+                if (resultCode == Activity.RESULT_OK) {
+
+//                  둘 다 맞아야만 닉네임을 (다른 화면에서 입력해준 값으로) 변경처리.
+
+                val newNickName = data?.getStringExtra("nick")
+
+                nickNameTxt.text = newNickName
+
+                }
+
+            }
+
 
     }
 }

@@ -38,4 +38,8 @@ class EditNickNameActivity : AppCompatActivity() {
 
 
     }
+
+
+    }
+
 }
